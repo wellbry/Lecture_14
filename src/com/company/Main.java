@@ -14,6 +14,15 @@ public class Main {
         System.out.println(resultString[0] + " " + resultString[1]+ " " + resultString[2]);
         */
 
-        Task.MainMenu mainChoice = Task.showMenuAndGetChoice(Task.MainMenu.values());
+        // Task.MainMenu mainChoice = Task.showMenuAndGetChoice(Task.MainMenu.values());
+
+        TestClass test1 = new TestClass("Test 1", 3);
+        TestClass test2 = new TestClass("Test 2", 7);
+
+        GenericStorage genStore = new GenericStorage(test1, test2);
+
+        System.out.println( genStore.getObject1().toString());
+        System.out.println( genStore.getObject2().toString());
+
     }
 }
