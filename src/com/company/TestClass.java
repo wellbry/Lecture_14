@@ -21,6 +21,6 @@ public class TestClass {
 
     @Override
     public String toString() {
-        return name + " " + number;
+        return name + ", " + number;
     }
 }

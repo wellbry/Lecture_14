@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Task {
@@ -23,14 +25,36 @@ public class Task {
         do {
             try {
                 menuChoice = Integer.parseInt(scan.nextLine());
-                // menuChoice = InputSanitizers.convertToInt(scan.nextLine());
-
                 return menuItems[menuChoice - 1];
             } catch (Exception e) {
                 System.out.println("Invalid choice, try again.");
             }
         } while (menuChoice != (menuItems.length));
         return null;
+    }
+
+    public static <T1 extends Number, T2 extends Number> float addNumbers(T1 t1, T2 t2){
+        return t1.floatValue() + t2.floatValue();
+    }
+
+    public static <T> T[] switchPlaces(T[] inArray, int index1, int index2){
+        T temp = inArray[index1];
+        inArray[index1] = inArray[index2];
+        inArray[index2] = temp;
+        return inArray;
+    }
+
+    public static <T1 extends Collection, T2 extends Collection> Collection getBiggestCollection(T1 t1, T2 t2){
+        if (t1.size() < t2.size()){
+            return t2;
+        } else {
+            return t1;
+        }
+    }
+
+    public static <T extends Collection> Collection copyToOtherCollection(T c1, T c2){
+        c2 = c1;
+        return c2;
     }
 
     public enum MainMenu implements HasDescription {
